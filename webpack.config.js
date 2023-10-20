@@ -1,61 +1,126 @@
-const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
-module.exports = {
-  entry: './src/index.js',
-  mode: 'development',
+const DEVELOPMENT = 'development'
+const ENV = process.env.NODE_ENV || DEVELOPMENT
+const IS_DEV = ENV === DEVELOPMENT
+
+const HTML_LOADER = 'html-loader'
+const STYLE_LOADER = 'style-loader'
+const CSS_LOADER = 'css-loader'
+const BABEL_LOADER = 'babel-loader'
+const STRING_REPLACE_LOADER = 'string-replace-loader'
+
+const SERVER_URL = /http:\/\/localhost:9000/g
+const FRONTEND_PORT = 3000
+
+const INDEX_HTML_PATH = './public/index.html'
+const INDEX_JS_PATH = './src/frontend/index.js'
+const DIST_FOLDER = 'dist'
+const BUNDLE_FILE = 'index.js'
+
+const SOURCE_MAP = IS_DEV ? 'source-map' : false
+
+const config = {
+  entry: INDEX_JS_PATH,
+  mode: ENV,
   output: {
-    filename: 'index.js',
+    filename: BUNDLE_FILE,
     publicPath: '/',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, DIST_FOLDER),
   },
-  devtool: 'source-map',
+  devtool: SOURCE_MAP,
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
+      template: INDEX_HTML_PATH,
     }),
   ],
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, DIST_FOLDER),
+    historyApiFallback: true,
     compress: true,
-    port: 3000,
+    port: FRONTEND_PORT,
   },
   module: {
     rules: [
       {
         test: /\.html$/i,
         exclude: /node_modules/,
-        loader: 'html-loader',
+        use: { loader: HTML_LOADER }
       },
       {
-        test: /\.m?js$/i,
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: { loader: BABEL_LOADER },
+      },
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          STYLE_LOADER,
+          CSS_LOADER,
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|jpeg)$/i, // Match image files
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]', // Output file name and extension
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            'presets': [['@babel/preset-env', { targets: { chrome: '80' } }]],
-          }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
         },
       },
       {
-        test: /\.less$/i,
-        exclude: /node_modules/,
+        test: /\.s[ac]ss$/i,
         use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" },
-          { loader: "less-loader" },
+          'style-loader', // Inject CSS into the DOM
+          'css-loader',   // Translates CSS into CommonJS
+          'sass-loader'   // Compiles Sass to CSS
         ],
       },
-      {   
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+      {
+        test: /\.less$/,  // Match .less files
+        use: [
+          'style-loader',  // Inject styles into the DOM
+          'css-loader',    // Handle CSS imports
+            {
+                loader: 'less-loader',  // Compile Less to CSS
+                options: {
+                    lessOptions: {
+                        javascriptEnabled: true,  // Enable inline JavaScript
+                    },
+                },
             },
-        },
+        ],
       },
     ],
   },
 }
+
+if (!IS_DEV) {
+  config.module.rules.push({
+    test: /\.m?js$/,
+    exclude: /node_modules/,
+    use: {
+      loader: STRING_REPLACE_LOADER,
+      options: {
+        search: SERVER_URL,
+        replace: '',
+      },
+    },
+  })
+}
+
+module.exports = config
