@@ -7,16 +7,16 @@ function generateCoverLetter(params) {
   // Define the dynamic prompt with placeholders
   const prompt = `Please write me a cover letter with these constraints: 
 The position is a ${params.position}.
-My name is ${params.name}.
+My name is ${params.yourName}.
 My skillset is with ${params.languages}.
 I am skilled in ${params.frameworks}.
-The company is called ${params.company}.
-The company address is ${params.address}.
-My address is ${params.myAddress}.
-My education came from ${params.school} which I attended from ${params.educationYears}.
-I also have my ${params.degree} in ${params.field}, which I received from the ${params.school} in ${params.graduationYear}.
-My github is ${params.githubLink} and some of my notable projects are ${params.githubProj1}, which is ${params.proj1Status},
-${params.githubProj2}, which is ${params.proj2Status}, and ${params.githubProj3}, which is ${params.proj3Status}.
+The company is called ${params.companyName}.
+The company address is ${params.companyAddress}.
+My address is ${params.yourAddress}.
+My education came from ${params.bootcampName} which I attended from ${params.bootcampYears}.
+I also have my ${params.degree} in ${params.fieldOfStudy}, which I received from the ${params.schoolName} in ${params.schoolGraduationYear}.
+My github is ${params.githubLink} and some of my notable projects are ${params.githubProject1Link}, which is ${params.githubProject1Status},
+${params.githubProject2Link}, which is ${params.githubProject2Status}, and ${params.githubProject3Link}, which is ${params.githubProject3Status}.
 The hiring manager's name is ${params.hiringManagerName}.`;
 
   const data = {
