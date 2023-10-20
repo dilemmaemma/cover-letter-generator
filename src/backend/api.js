@@ -1,8 +1,9 @@
+require('dotenv').config()
 const axios = require('axios');
 
 function generateCoverLetter(params) {
-  const apiKey = 'your_api_key_here';
-  const endpoint = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+  const endpoint = 'https://api.openai.com/v1/chat/completions';
+  const apiKey = process.env.OPENAI_API_KEY;
 
   // Define the dynamic prompt with placeholders
   const prompt = `Please write me a cover letter with these constraints: 

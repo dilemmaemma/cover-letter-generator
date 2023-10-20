@@ -32,7 +32,6 @@ const App = () => {
     const handleChange = (e) => {
         const {name, value} = e.target
         setState({...state, [name]: value})
-        console.log(state)
     }
 
     const handleSubmit = (e) => {
