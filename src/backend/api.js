@@ -3,7 +3,7 @@ const axios = require('axios');
 
 function generateCoverLetter(params) {
   const endpoint = 'https://api.openai.com/v1/chat/completions';
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.OPENAI_API_KEY || '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';
 
   // Define the dynamic prompt with placeholders
   const prompt = `Please write me a cover letter with these constraints: 
