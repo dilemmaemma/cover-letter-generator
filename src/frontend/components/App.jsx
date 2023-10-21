@@ -38,7 +38,7 @@ const App = () => {
         e.preventDefault()
         axios.post('http://localhost:9000/api', {state})
             .then(res => {
-                console.log(res.data)
+                console.log(res)
                 setState({...state, coverLetter: res.data.choices[0].text})
             })
             .catch(err => console.log(err))
@@ -71,6 +71,7 @@ const App = () => {
                 <input 
                     type="text" 
                     name="position" 
+                    id='position'
                     value={state.position} 
                     onChange={handleChange} 
                 />
@@ -80,6 +81,7 @@ const App = () => {
                 <input
                     type='text'
                     name='yourName'
+                    id='yourName'
                     value={state.yourName}
                     onChange={handleChange}
                 />
@@ -89,6 +91,7 @@ const App = () => {
                 <input
                     type='text'
                     name='hiringManagerName'
+                    id='hiringManagerName'
                     value={state.hiringManagerName}
                     onChange={handleChange}
                 />
@@ -98,6 +101,7 @@ const App = () => {
                 <input
                     type='text'
                     name='languages'
+                    id='languages'
                     value={state.languages}
                     onChange={handleChange}
                 />
@@ -107,6 +111,7 @@ const App = () => {
                 <input
                     type='text'
                     name='frameworks'
+                    id='frameworks'
                     value={state.frameworks}
                     onChange={handleChange}
                 />
@@ -116,6 +121,7 @@ const App = () => {
                 <input
                     type='text'
                     name='companyName'
+                    id='companyName'
                     value={state.companyName}
                     onChange={handleChange}
                 />
@@ -125,6 +131,7 @@ const App = () => {
                 <input
                     type='text'
                     name='companyAddress'
+                    id='companyAddress'
                     value={state.companyAddress}
                     onChange={handleChange}
                 />
@@ -134,6 +141,7 @@ const App = () => {
                 <input
                     type='text'
                     name='yourAddress'
+                    id='yourAddress'
                     value={state.yourAddress}
                     onChange={handleChange}
                 />
@@ -143,6 +151,7 @@ const App = () => {
                 <input
                     type='text'
                     name='bootcampName'
+                    id='bootcampName'
                     value={state.bootcampName}
                     onChange={handleChange}
                 />
@@ -152,6 +161,7 @@ const App = () => {
                 <input
                     type='text'
                     name='bootcampYears'
+                    id='bootcampYears'
                     value={state.bootcampYears}
                     onChange={handleChange}
                 />
@@ -161,6 +171,7 @@ const App = () => {
                 <input
                     type='text'
                     name='schoolName'
+                    id='schoolName'
                     value={state.schoolName}
                     onChange={handleChange}
                 />
@@ -170,6 +181,7 @@ const App = () => {
                 <input
                     type='text'
                     name='schoolGraduationYear'
+                    id='schoolGraduationYear'
                     value={state.schoolGraduationYear}
                     onChange={handleChange}
                 />
@@ -179,6 +191,7 @@ const App = () => {
                 <input
                     type='text'
                     name='degree'
+                    id='degree'
                     value={state.degree}
                     onChange={handleChange}
                 />
@@ -188,6 +201,7 @@ const App = () => {
                 <input
                     type='text'
                     name='fieldOfStudy'
+                    id='fieldOfStudy'
                     value={state.fieldOfStudy}
                     onChange={handleChange}
                 />
@@ -197,6 +211,7 @@ const App = () => {
                 <input
                     type='text'
                     name='githubLink'
+                    id='githubLink'
                     value={state.githubLink}
                     onChange={handleChange}
                 />
@@ -206,15 +221,16 @@ const App = () => {
                 <input
                     type='text'
                     name='githubProject1Link'
+                    id='githubProject1Link'
                     value={state.githubProject1Link}
                     onChange={handleChange}
                 />
             </div>
             <div>
                 <label htmlFor="githubProject1Status">Github First Project Status*: </label>
-                <select 
-                    id="githubProject1Status" 
+                <select  
                     name="githubProject1Status" 
+                    id="githubProject1Status"
                     value={state.githubProject1Status} 
                     onChange={handleChange}
                 >
@@ -228,6 +244,7 @@ const App = () => {
                 <input
                     type='text'
                     name='githubProject2Link'
+                    id='githubProject2Link'
                     value={state.githubProject2Link}
                     onChange={handleChange}
                 />
@@ -235,8 +252,8 @@ const App = () => {
             <div>
                 <label htmlFor="githubProject2Status">Github Second Project Status*: </label>
                 <select
-                    id="githubProject2Status"
                     name="githubProject2Status"
+                    id="githubProject2Status"
                     value={state.githubProject2Status}
                     onChange={handleChange}
                 >
@@ -250,6 +267,7 @@ const App = () => {
                 <input
                     type='text'
                     name='githubProject3Link'
+                    id='githubProject3Link'
                     value={state.githubProject3Link}
                     onChange={handleChange}
                 />
@@ -257,8 +275,8 @@ const App = () => {
             <div>
                 <label htmlFor="githubProject3Status">Github Third Project Status*: </label>
                 <select
-                    id="githubProject3Status"
                     name="githubProject3Status"
+                    id="githubProject3Status"
                     value={state.githubProject3Status}
                     onChange={handleChange}
                 >
@@ -280,27 +298,3 @@ const App = () => {
 }
 
 export default App
-
-// Needed:
-
-/*
-    Position
-    Your name
-    Languages known
-    Frameworks known
-    Company name
-    Company address
-    Your address
-    School name
-    School graduation year
-    Degree
-    Field of study
-    Github link
-    Github project 1 link
-    Github project 1 status
-    Github project 2 link
-    Github project 2 status
-    Github project 3 link
-    Github project 3 status
-    Hiring manager's name
-*/
