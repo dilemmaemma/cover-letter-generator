@@ -151,26 +151,6 @@ const App = () => {
                 />
             </div>
             <div>
-                <label htmlFor="companyAddress">Company address: </label>
-                <input
-                    type='text'
-                    name='companyAddress'
-                    id='companyAddress'
-                    value={state.companyAddress}
-                    onChange={handleChange}
-                />
-            </div>
-            <div>
-                <label htmlFor="yourAddress">Your address: </label>
-                <input
-                    type='text'
-                    name='yourAddress'
-                    id='yourAddress'
-                    value={state.yourAddress}
-                    onChange={handleChange}
-                />
-            </div>
-            <div>
                 <label htmlFor="bootcampName">Bootcamp name (if applicable): </label>
                 <input
                     type='text'
