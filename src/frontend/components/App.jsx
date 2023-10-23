@@ -4,6 +4,8 @@ import axios from 'axios'
 const initialState = {
     position: '',
     yourName: '',
+    phone: '',
+    email: '',
     languages: '',
     frameworks: '',
     companyName: '',
@@ -56,6 +58,8 @@ const App = () => {
             state.githubProject2Link !== '' &&
             state.githubProject2Status !== '' &&
             state.githubProject3Link !== '' &&
+            state.phone !== '' &&
+            state.email !== '' &&
             state.githubProject3Status !== '' ? false : true
     }
 
@@ -83,6 +87,26 @@ const App = () => {
                     name='yourName'
                     id='yourName'
                     value={state.yourName}
+                    onChange={handleChange}
+                />
+            </div>
+            <div>
+                <label htmlFor="phone">Your phone number*: </label>
+                <input
+                    type='tel'
+                    name='phone'
+                    id='phone'
+                    value={state.phone}
+                    onChange={handleChange}
+                />
+            </div>
+            <div>
+                <label htmlFor="email">Your email*: </label>
+                <input
+                    type='email'
+                    name='email'
+                    id='email'
+                    value={state.email}
                     onChange={handleChange}
                 />
             </div>

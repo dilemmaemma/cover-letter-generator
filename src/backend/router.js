@@ -1,10 +1,19 @@
 const router = require('express').Router()
 const { generateCoverLetter } = require('./middleware')
+const rateLimit = require("express-rate-limit");
 
-router.post('/', (req, res, next) => {
+const apiLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 60, // 60 requests per minute
+  message: "Too many requests, please try again later.",
+});
+
+router.post('/', apiLimiter, (req, res, next) => {
     const { 
         position, 
-        yourName, 
+        yourName,
+        phone,
+        email,
         languages, 
         frameworks, 
         companyName, 
@@ -30,6 +39,8 @@ router.post('/', (req, res, next) => {
         generateCoverLetter({
             position: position,
             yourName: yourName,
+            phone: phone,
+            email: email,
             languages: languages,
             frameworks: frameworks,
             companyName: companyName,
