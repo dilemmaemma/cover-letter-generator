@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const openAi = require('./api');
+const openAi = require('./router.js');
 
 const server = express();
 

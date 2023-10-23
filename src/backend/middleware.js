@@ -1,7 +1,7 @@
 const axios = require('axios');
 
-function generateCoverLetter(params) {
-
+const  generateCoverLetter = (params) => {
+    console.log(params)
     const apiKey = process.env.OPENAI_API_KEY;
     const model = 'gpt-3.5-turbo'; // Replace with the appropriate model for your use case
 
@@ -20,23 +20,23 @@ function generateCoverLetter(params) {
         The hiring manager's name is ${params.hiringManagerName}.`;
 
     return axios
-    .post('https://api.openai.com/v1/engines/' + model + '/completions', {
-        prompt: prompt,
-        max_tokens: 500, // Adjust as needed
-    }, {
-        headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        },
-    })
-    .then((response) => {
-        // Handle the response from the OpenAI API
-        return response.data
-    })
-    .catch((error) => {
-        // Handle errors
-        console.error(error);
-    });
+        .post('https://api.openai.com/v1/engines/' + model + '/completions', {
+            prompt: prompt,
+            max_tokens: 500, // Adjust as needed
+        }, {
+            headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            },
+            })
+            .then((response) => {
+                // Handle the response from the OpenAI API
+                return response.data
+            })
+            .catch((error) => {
+                // Handle errors
+                console.error(error);
+        });
   
 }
 
-module.exports = generateCoverLetter;
+module.exports = {generateCoverLetter};
