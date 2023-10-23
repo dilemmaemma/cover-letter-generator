@@ -59,7 +59,7 @@ router.post('/', apiLimiter, (req, res, next) => {
         })
         res.status(200).json({
             message: 'Cover letter generated successfully',
-            coverLetter: res.data
+            coverLetter: res
         })
     } catch {
         next(err)
