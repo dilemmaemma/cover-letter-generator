@@ -38,10 +38,11 @@ const App = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        // setState(initialState)
         axios.post('http://localhost:9000/api', {state})
             .then(res => {
                 console.log(res)
-                setState({...state, coverLetter: res.data.choices[0].text})
+                // setState({...state, coverLetter: res.data.choices[0].text})
             })
             .catch(err => console.log(err))
     }

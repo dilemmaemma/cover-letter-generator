@@ -7,6 +7,15 @@ const  generateCoverLetter = async (params) => {
 
     const {position, yourName, phone, email, languages, frameworks, companyName, githubLink, githubProject1Link, githubProject1Status, githubProject2Link, githubProject2Status, githubProject3Link, githubProject3Status} = params
     let response
+    let username = []
+
+    for(let i = 18; i < githubLink.length; i++) {
+        let splits = githubLink.split('')
+        if (splits[i] === '/') break
+        username.push(splits[i])
+    }
+
+    username = username.join('')
 
     const myDate = new Date();
 
@@ -45,17 +54,14 @@ const  generateCoverLetter = async (params) => {
                 \n\n
                 I have a strong passion for coding and have continuously sought opportunities to expand my skill set. My GitHub profile, accessible at ${githubLink}, showcases some of my notable projects:
                 \n\n
-                1. [Project 1] - ${githubProject1Status} \n
-                    - GitHub Link: ${githubProject1Link} \n
-                    - Status: ${githubProject1Status}
+                1. ${githubProject1Link.slice(19 + username.length, githubProject1Link.length).charAt(0).toUpperCase() + githubProject1Link.slice(19 + username.length, githubProject1Link.length).slice(1)} - ${githubProject1Status === 'inProduction' ? 'In Production': 'Completed'} \n
+                    - GitHub Link: ${githubProject1Link}
                 \n\n
-                2. [Project 2] - ${githubProject2Status} \n
-                    - GitHub Link: ${githubProject2Link} \n
-                    - Status: ${githubProject2Status}
+                2. ${githubProject2Link.slice(19 + username.length, githubProject2Link.length).charAt(0).toUpperCase() + githubProject2Link.slice(19 + username.length, githubProject2Link.length).slice(1)} - ${githubProject2Status === 'inProduction' ? 'In Production' : 'Completed'} \n
+                    - GitHub Link: ${githubProject2Link}
                 \n\n
-                3. [Project 3] - ${githubProject3Status} \n
-                    - GitHub Link: ${githubProject3Link} \n
-                    - Status: ${githubProject3Status}
+                3. ${githubProject3Link.slice(19 + username.length, githubProject3Link.length).charAt(0).toUpperCase() + githubProject3Link.slice(19 + username.length, githubProject3Link.length).slice(1)} - ${githubProject3Status === 'inProduction' ? 'In Production' : 'Completed'} \n
+                    - GitHub Link: ${githubProject3Link}
                 \n\n
                 These projects reflect my dedication to building practical solutions and my ability to adapt to various programming environments. I am committed to maintaining clean and efficient code, as well as staying updated with the latest industry trends.
                 \n\n
@@ -98,17 +104,14 @@ const  generateCoverLetter = async (params) => {
                 \n\n
                 My GitHub portfolio, accessible at ${githubLink}, showcases a range of projects that demonstrate my ability to apply my technical knowledge to real-world scenarios. Notable among them are:
                 \n\n
-                1. [Project 1] - ${githubProject1Status} \n
-                    - GitHub Link: ${githubProject1Link} \n
-                    - Status: ${githubProject1Status}
+                1. ${githubProject1Link.slice(19 + username.length, githubProject1Link.length).charAt(0).toUpperCase() + githubProject1Link.slice(19 + username.length, githubProject1Link.length).slice(1)} - ${githubProject1Status === 'inProduction' ? 'In Production': 'Completed'} \n
+                    - GitHub Link: ${githubProject1Link} 
                 \n\n
-                2. [Project 2] - ${githubProject2Status} \n
-                    - GitHub Link: ${githubProject2Link} \n
-                    - Status: ${githubProject2Status}
+                2. ${githubProject2Link.slice(19 + username.length, githubProject2Link.length).charAt(0).toUpperCase() + githubProject2Link.slice(19 + username.length, githubProject2Link.length).slice(1)} - ${githubProject2Status === 'inProduction' ? 'In Production' : 'Completed'} \n
+                    - GitHub Link: ${githubProject2Link} 
                 \n\n
-                3. [Project 3] - ${githubProject3Status} \n
-                    - GitHub Link: ${githubProject3Link} \n
-                    - Status: ${githubProject3Status}
+                3. ${githubProject3Link.slice(19 + username.length, githubProject3Link.length).charAt(0).toUpperCase() + githubProject3Link.slice(19 + username.length, githubProject3Link.length).slice(1)} - ${githubProject3Status === 'inProduction' ? 'In Production' : 'Completed'} \n
+                    - GitHub Link: ${githubProject3Link} 
                 \n\n
                 These projects reflect my ability to [briefly describe what each project accomplished or demonstrated]. I am confident that my experience in developing and managing such projects will be an asset to ${companyName}.
                 \n\n
@@ -148,17 +151,14 @@ const  generateCoverLetter = async (params) => {
             \n\n
             I have a strong passion for coding and have demonstrated my capabilities through various projects on my GitHub profile: ${githubLink}. Some of my notable projects include:
             \n\n
-            1. [Project 1] - ${githubProject1Status} \n
-                - GitHub Link: ${githubProject1Link} \n
-                - Status: ${githubProject1Status}
+            1. ${githubProject1Link.slice(19 + username.length, githubProject1Link.length).charAt(0).toUpperCase() + githubProject1Link.slice(19 + username.length, githubProject1Link.length).slice(1)} - ${githubProject1Status === 'inProduction' ? 'In Production': 'Completed'} \n
+                - GitHub Link: ${githubProject1Link} 
             \n\n
-            2. [Project 2] - ${githubProject2Status} \n
-                - GitHub Link: ${githubProject2Link} \n
-                - Status: ${githubProject2Status}
+            2. ${githubProject2Link.slice(19 + username.length, githubProject2Link.length).charAt(0).toUpperCase() + githubProject2Link.slice(19 + username.length, githubProject2Link.length).slice(1)} - ${githubProject2Status === 'inProduction' ? 'In Production' : 'Completed'} \n
+                - GitHub Link: ${githubProject2Link} 
             \n\n
-            3. [Project 3] - ${githubProject3Status} \n
-                - GitHub Link: ${githubProject3Link} \n
-                - Status: ${githubProject3Status}
+            3. ${githubProject3Link.slice(19 + username.length, githubProject3Link.length).charAt(0).toUpperCase() + githubProject3Link.slice(19 + username.length, githubProject3Link.length).slice(1)} - ${githubProject3Status === 'inProduction' ? 'In Production' : 'Completed'} \n
+                - GitHub Link: ${githubProject3Link} 
             \n\n
             These projects showcase my commitment to producing high-quality code and my ability to deliver results in a timely manner.
             \n\n
@@ -192,17 +192,14 @@ const  generateCoverLetter = async (params) => {
             \n\n
             My experience has equipped me with a robust skillset in ${languages} and expertise in ${frameworks}, making me well-prepared to tackle the challenges of the ${position} role. I have also contributed to several notable projects, including:
             \n\n
-            1. [Project 1] - ${githubProject1Status} \n
-                - GitHub Link: ${githubProject1Link} \n
-                - Status: ${githubProject1Status}
+            1. ${githubProject1Link.slice(19 + username.length, githubProject1Link.length).charAt(0).toUpperCase() + githubProject1Link.slice(19 + username.length, githubProject1Link.length).slice(1)} - ${githubProject1Status === 'inProduction' ? 'In Production': 'Completed'} \n
+                - GitHub Link: ${githubProject1Link} 
             \n\n
-            2. [Project 2] - ${githubProject2Status} \n
-                - GitHub Link: ${githubProject2Link} \n
-                - Status: ${githubProject2Status}
+            2. ${githubProject2Link.slice(19 + username.length, githubProject2Link.length).charAt(0).toUpperCase() + githubProject2Link.slice(19 + username.length, githubProject2Link.length).slice(1)} - ${githubProject2Status === 'inProduction' ? 'In Production' : 'Completed'} \n
+                - GitHub Link: ${githubProject2Link} 
             \n\n
-            3. [Project 3] - ${githubProject3Status} \n
-                - GitHub Link: ${githubProject3Link} \n
-                - Status: ${githubProject3Status}
+            3. ${githubProject3Link.slice(19 + username.length, githubProject3Link.length).charAt(0).toUpperCase() + githubProject3Link.slice(19 + username.length, githubProject3Link.length).slice(1)} - ${githubProject3Status === 'inProduction' ? 'In Production' : 'Completed'} \n
+                - GitHub Link: ${githubProject3Link} 
             \n\n
             These projects showcase my ability to develop innovative solutions and collaborate effectively within a team.
             \n\n
@@ -239,7 +236,7 @@ const sendEmail = async (params) => {
       from: 'automated@dilemmacatcoding.com', // sender address
       to: email, // list of receivers
       subject: `Cover Letter for ${position} at ${companyName}`, // Subject line
-      text: response, // plain text body
+      text: response // plain text body
     //   html: {
     //     path: path.resolve(__dirname, "../template/mail.html"),
     //   }, // html body

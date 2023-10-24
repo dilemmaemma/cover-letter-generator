@@ -1,14 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 
-const openAi = require('./router.js');
+const cl = require('./router.js');
 
 const server = express();
 
 server.use(express.json());
 server.use(cors());
 
-server.use('/api', openAi);
+server.use('/api', cl);
 
 server.use((err, req, res, next) => { // eslint-disable-line
     res.status(err.status || 500).json({
