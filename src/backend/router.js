@@ -51,8 +51,8 @@ router.post('/', async (req, res, next) => {
             hiringManagerName: hiringManagerName || 'unknown'
         })
         res.status(200).json({
-            message: 'Cover letter sent successfully',
-            coverLetter: res
+            message: 'Cover letter sent successfully.',
+            info: 'Please make sure to check your junk mail if the email does not appear in your inbox in the next few minutes.',
         })
     } catch (err) {
         next(err)
