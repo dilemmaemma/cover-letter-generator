@@ -224,11 +224,11 @@ const  generateCoverLetter = async (params) => {
             \n
             Dear ${params.hiringManagerName !== 'unknown' ? params.hiringManagerName : 'Hiring Manager'},
             \n\n
-            I am writing to express my keen interest in the ${position} role at ${companyName}, as advertised on [Where You Found the Job Listing]. With my strong background in ${languages} and proficiency in ${frameworks}, I am excited about the opportunity to contribute to your dynamic team.
+            I am writing to express my keen interest in the ${position} role at ${companyName}, as advertised on [Where You Found the Job Listing]. With my strong background in ${languages}, and proficiency in ${frameworks}, I am excited about the opportunity to contribute to your dynamic team.
             \n\n
-            My name is ${yourName}, and I can be reached at ${phone} or via email at ${email}. I have a ${params.degree} in ${params.fieldOfStudy} from ${params.schoolName}, which I received in ${params.schoolGraduationYear}. Additionally, I honed my skills through ${params.bootcampName}, which I attended from ${params.bootcampYears}.
+            My name is ${yourName}, and I have a ${params.degree} in ${params.fieldOfStudy} from ${params.schoolName}, which I received in ${params.schoolGraduationYear}. Additionally, I honed my skills through ${params.bootcampName}, which I attended from ${params.bootcampYears}.
             \n\n
-            My experience has equipped me with a robust skillset in ${languages} and expertise in ${frameworks}, making me well-prepared to tackle the challenges of the ${position} role. I have also contributed to several notable projects, including:
+            My experience has equipped me with a robust skillset in ${languages}, and expertise in ${frameworks}, making me well-prepared to tackle the challenges of the ${position} role. I have also contributed to several notable projects, including:
             \n\n
             1. ${githubProject1Link.slice(19 + username.length, githubProject1Link.length).charAt(0).toUpperCase() + githubProject1Link.slice(19 + username.length, githubProject1Link.length).slice(1)} - ${githubProject1Status === 'inProduction' ? 'In Production': 'Completed'} \n
                 - GitHub Link: ${githubProject1Link} 
@@ -243,7 +243,7 @@ const  generateCoverLetter = async (params) => {
             \n\n
             I am particularly excited about ${companyName} [specific aspect of the company or project] and believe my skills align perfectly with the requirements for this role. The prospect of contributing to your organization's success is truly inspiring.
             \n\n
-            I am excited about the opportunity to discuss how my skills and experiences align with ${companyName}'s needs. Thank you for considering my application. I am eager to learn more about the team and the opportunities at ${companyName}.
+            I am excited about the opportunity to discuss how my skills and experiences align with ${companyName}'s needs. Thank you for considering my application. I can be reached by phone at ${phone} or via email at ${email}. I am eager to learn more about the team and the opportunities at ${companyName}.
             \n\n
             Sincerely,
             \n\n
