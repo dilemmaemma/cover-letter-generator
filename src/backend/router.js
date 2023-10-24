@@ -1,14 +1,8 @@
 const router = require('express').Router()
-const { generateCoverLetter, sendEmail } = require('./middleware')
+const { generateCoverLetter } = require('./middleware')
 const rateLimit = require("express-rate-limit");
 
-const apiLimiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minute
-  max: 60, // 60 requests per minute
-  message: "Too many requests, please try again later.",
-});
-
-router.post('/', apiLimiter, async (req, res, next) => {
+router.post('/', async (req, res, next) => {
     const { 
         position, 
         yourName,
@@ -61,7 +55,7 @@ router.post('/', apiLimiter, async (req, res, next) => {
             message: 'Cover letter sent successfully',
             coverLetter: res
         })
-    } catch {
+    } catch (err) {
         next(err)
     }
 })

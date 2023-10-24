@@ -240,9 +240,9 @@ const sendEmail = async (params) => {
       to: email, // list of receivers
       subject: `Cover Letter for ${position} at ${companyName}`, // Subject line
       text: response, // plain text body
-      html: {
-        path: path.resolve(__dirname, "../template/mail.html"),
-      }, // html body
+    //   html: {
+    //     path: path.resolve(__dirname, "../template/mail.html"),
+    //   }, // html body
     });
 
     console.log(`Message sent: ${info.messageId}`);
