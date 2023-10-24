@@ -36,13 +36,16 @@ const App = () => {
         setState({...state, [name]: value})
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         // setState(initialState)
-        axios.post('http://localhost:9000/api', {state})
+        await axios.post('http://localhost:9000/api', state, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
             .then(res => {
                 console.log(res)
-                // setState({...state, coverLetter: res.data.choices[0].text})
             })
             .catch(err => console.error(err.message))
     }

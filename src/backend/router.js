@@ -24,7 +24,7 @@ router.post('/', (req, res, next) => {
         githubProject3Link, 
         githubProject3Status, 
         hiringManagerName 
-    } = req.body.state
+    } = req.body
 
     try {
         generateCoverLetter({
