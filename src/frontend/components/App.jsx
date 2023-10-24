@@ -44,7 +44,7 @@ const App = () => {
                 console.log(res)
                 // setState({...state, coverLetter: res.data.choices[0].text})
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err.message))
     }
 
     const isDisabled = () => {

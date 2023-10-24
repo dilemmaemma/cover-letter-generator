@@ -50,7 +50,7 @@ router.post('/', (req, res, next) => {
             githubProject3Status: githubProject3Status,
             hiringManagerName: hiringManagerName || 'unknown'
         })
-        res.json({
+        res.status(201).json({
             message: res,
             info: 'Please make sure to check your junk mail if the email does not appear in your inbox in the next few minutes.',
         })
