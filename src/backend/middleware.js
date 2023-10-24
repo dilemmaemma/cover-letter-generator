@@ -76,7 +76,10 @@ const  generateCoverLetter = async (params) => {
                 \n\n
                 Sincerely,
                 \n\n
-                ${yourName}`
+                ${yourName}
+                \n\n\n\n
+                Please do not reply to this email. This email was sent to you courtesy of Emma via GitHub: https://github.com/dilemmaemma
+                `
 
 
         }
@@ -119,7 +122,10 @@ const  generateCoverLetter = async (params) => {
                 \n\n
                 Sincerely,
                 \n\n
-                ${yourName}`
+                ${yourName}
+                \n\n\n\n
+                Please do not reply to this email. This email was sent to you courtesy of Emma via GitHub: https://github.com/dilemmaemma
+                `
 
 
         }
@@ -168,7 +174,10 @@ const  generateCoverLetter = async (params) => {
             \n\n
             Sincerely,
             \n\n
-            ${yourName}`
+            ${yourName}
+            \n\n\n\n
+            Please do not reply to this email. This email was sent to you courtesy of Emma via GitHub: https://github.com/dilemmaemma
+            `
 
     }
     else {
@@ -209,7 +218,10 @@ const  generateCoverLetter = async (params) => {
             \n\n
             Sincerely,
             \n\n
-            ${yourName}`
+            ${yourName}
+            \n\n\n\n
+            Please do not reply to this email. This email was sent to you courtesy of Emma via GitHub: https://github.com/dilemmaemma
+            `
 
     }
 
