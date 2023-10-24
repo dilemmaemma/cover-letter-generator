@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { generateCoverLetter } = require('./middleware')
 
-router.post('/', async (req, res, next) => {
+router.post('/', (req, res, next) => {
     const { 
         position, 
         yourName,
@@ -51,7 +51,7 @@ router.post('/', async (req, res, next) => {
             hiringManagerName: hiringManagerName || 'unknown'
         })
         res.status(200).json({
-            message: 'Cover letter sent successfully.',
+            message: res,
             info: 'Please make sure to check your junk mail if the email does not appear in your inbox in the next few minutes.',
         })
     } catch (err) {
