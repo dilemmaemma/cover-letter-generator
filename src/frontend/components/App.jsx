@@ -36,10 +36,10 @@ const App = () => {
         setState({...state, [name]: value})
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         // setState(initialState)
-        await axios.post('http://localhost:9000/api', state, {
+        axios.post('http://localhost:9000/api', state, {
             headers: {
                 'Content-Type': 'application/json',
             },

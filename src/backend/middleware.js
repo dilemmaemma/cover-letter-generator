@@ -5,7 +5,23 @@ const path = require('path');
 
 const  generateCoverLetter = async (params) => {
 
-    const {position, yourName, phone, email, languages, frameworks, companyName, githubLink, githubProject1Link, githubProject1Status, githubProject2Link, githubProject2Status, githubProject3Link, githubProject3Status} = params
+    const {
+        position, 
+        yourName, 
+        phone, 
+        email, 
+        languages, 
+        frameworks, 
+        companyName, 
+        githubLink, 
+        githubProject1Link, 
+        githubProject1Status, 
+        githubProject2Link, 
+        githubProject2Status, 
+        githubProject3Link, 
+        githubProject3Status
+    } = params
+
     let response
     let username = []
 
@@ -19,14 +35,27 @@ const  generateCoverLetter = async (params) => {
 
     const myDate = new Date();
 
-    let monthsList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const monthsList = [
+        'January', 
+        'February', 
+        'March', 
+        'April', 
+        'May', 
+        'June', 
+        'July', 
+        'August', 
+        'September', 
+        'October', 
+        'November', 
+        'December'
+    ];
 
 
-    let date = myDate.getDate();
-    let month = monthsList[myDate.getMonth()];
-    let year = myDate.getFullYear();
+    const date = myDate.getDate();
+    const month = monthsList[myDate.getMonth()];
+    const year = myDate.getFullYear();
 
-    let today = `${month} ${date}, ${year}`;
+    const today = `${month} ${date}, ${year}`;
 
     if (
         params.degree === 'not applicable' || 

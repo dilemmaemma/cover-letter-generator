@@ -51,7 +51,7 @@ router.post('/', (req, res, next) => {
             hiringManagerName: hiringManagerName || 'unknown'
         })
         res.status(201).json({
-            message: res,
+            message: `Cover Letter sent to ${email} successfully`,
             info: 'Please make sure to check your junk mail if the email does not appear in your inbox in the next few minutes.',
         })
     } catch (err) {
