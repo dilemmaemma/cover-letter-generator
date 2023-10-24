@@ -70,7 +70,7 @@ const App = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} onReset={handleReset}>
+        <form onSubmit={handleSubmit} onReset={handleReset} className='form'>
             <div className='form-entry'>
                 <label htmlFor="position">Position*: </label>
                 <input 

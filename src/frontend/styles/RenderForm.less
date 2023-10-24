@@ -11,20 +11,59 @@
 @tablet-large: ~"(min-width: 769px) and (max-width: 1024px)";
 @laptop: ~"(min-width: 1025px) and (max-width: 1280px)";
 
-body {
-    margin-left: 5%;
-    margin-top: 4%;
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.form-entry {
+body {
+    margin-left: 3%;
+    margin-top: 2%;
+}
+
+.form .form-entry {
     font-family: 'BeatriceRegular';
+    font-size: 15px;
     padding: 2px;
 }
 
-.required {
+.form .required {
     font-family: 'AcuminProMediumItalic';
 }
 
-.buttons #SubmitForm {
+.form .buttons {
+    margin-top: 10px;
+}
+
+.form .buttons #SubmitForm {
     margin-right: 10%;
+    font-family: 'MonetaBold';
+    font-size: 18px;
+    background-color: white;
+    color: @link-color;
+    border: 2px solid @main-color;
+    transition-duration: 0.4s;
+    padding: 2px 5px 2px 5px;
+}
+
+.form .buttons #ResetForm {
+    font-family: 'MonetaBold';
+    font-size: 18px;
+    background-color: white;
+    color: @link-color;
+    border: 2px solid @main-color;
+    transition-duration: 0.4s;
+    padding: 2px 12px 2px 12px;
+}
+
+.form .buttons #SubmitForm:hover {
+    background-color: @main-color;
+    color: @link-hover-color;
+}
+
+.form .buttons #ResetForm:hover {
+    background-color: @main-color;
+    color: @link-hover-color;
 }
