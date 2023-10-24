@@ -71,7 +71,7 @@ const App = () => {
 
     return (
         <form onSubmit={handleSubmit} onReset={handleReset}>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="position">Position*: </label>
                 <input 
                     type="text" 
@@ -81,7 +81,7 @@ const App = () => {
                     onChange={handleChange} 
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="yourName">Your name*: </label>
                 <input
                     type='text'
@@ -91,7 +91,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="phone">Your phone number*: </label>
                 <input
                     type='tel'
@@ -101,7 +101,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="email">Your email*: </label>
                 <input
                     type='email'
@@ -111,7 +111,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="hiringManagerName">Hiring manager's name: </label>
                 <input
                     type='text'
@@ -121,7 +121,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="languages">Languages known (separate with a comma)*: </label>
                 <input
                     type='text'
@@ -131,7 +131,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="frameworks">Frameworks known (separate with a comma)*: </label>
                 <input
                     type='text'
@@ -141,7 +141,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="companyName">Company name*: </label>
                 <input
                     type='text'
@@ -151,7 +151,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="bootcampName">Bootcamp name (if applicable): </label>
                 <input
                     type='text'
@@ -161,7 +161,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="bootcampYears">Bootcamp years (if applicable): </label>
                 <input
                     type='text'
@@ -171,7 +171,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="schoolName">School name: </label>
                 <input
                     type='text'
@@ -181,7 +181,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="schoolGraduationYear">School graduation year: </label>
                 <input
                     type='text'
@@ -191,7 +191,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="degree">Degree Type: </label>
                 <input
                     type='text'
@@ -201,7 +201,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="fieldOfStudy">Field of study: </label>
                 <input
                     type='text'
@@ -211,7 +211,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="githubLink">Github link*: </label>
                 <input
                     type='text'
@@ -221,7 +221,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="githubProject1Link">Github First Project Link*: </label>
                 <input
                     type='text'
@@ -231,7 +231,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="githubProject1Status">Github First Project Status*: </label>
                 <select  
                     name="githubProject1Status" 
@@ -244,7 +244,7 @@ const App = () => {
                     <option value="inProduction">In Production</option>
                 </select>
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="githubProject2Link">Github Second Project Link*: </label>
                 <input
                     type='text'
@@ -254,7 +254,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="githubProject2Status">Github Second Project Status*: </label>
                 <select
                     name="githubProject2Status"
@@ -267,7 +267,7 @@ const App = () => {
                     <option value="inProduction">In Production</option>
                 </select>
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="githubProject3Link">Github Third Project Link*: </label>
                 <input
                     type='text'
@@ -277,7 +277,7 @@ const App = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='form-entry'>
                 <label htmlFor="githubProject3Status">Github Third Project Status*: </label>
                 <select
                     name="githubProject3Status"
@@ -290,11 +290,11 @@ const App = () => {
                     <option value="inProduction">In Production</option>
                 </select>
             </div>
-            <small>
+            <small className='required'>
                 * Required
             </small>
             <br/>
-            <div>
+            <div className='buttons'>
                 <button disabled={isDisabled()} id='SubmitForm'>Submit</button>
                 <button id='ResetForm'>Reset</button>
             </div>
