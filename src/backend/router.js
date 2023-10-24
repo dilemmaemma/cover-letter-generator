@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const { generateCoverLetter } = require('./middleware')
-const rateLimit = require("express-rate-limit");
 
 router.post('/', async (req, res, next) => {
     const { 
