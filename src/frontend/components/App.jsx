@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const initialState = {
@@ -33,6 +33,19 @@ const App = () => {
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [info, setInfo] = useState('');
+
+    useEffect(() => {
+        setInterval(() => {
+            error && setError('')
+        }, 2000)
+    }, [error])
+
+    useEffect(() => {
+        setInterval(() => {
+            message && setMessage('')
+            info && setInfo('')
+        }, 8000)
+    }, [message, info])
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -78,6 +91,25 @@ const App = () => {
         setState(initialState)
     }
 
+    const handleClick = () => {
+        if (!state.position) setError('Position is required!')
+        else if (!state.yourName) setError('You name is required!')
+        else if (!state.languages) setError('Languages are required!')
+        else if (!state.frameworks) setError('Frameworks are required!')
+        else if (!state.companyName) setError('Company name is required!')
+        else if (!state.githubLink) setError('Your github link is required!')
+        else if (
+            !state.githubProject1Link || 
+            !state.githubProject1Status || 
+            !state.githubProject2Link || 
+            !state.githubProject2Status || 
+            !state.githubProject3Link || 
+            !state.githubProject3Status
+        ) setError('Three github projects and their status are required!')
+        else if (!state.phone) setError('Your phone number is required!')
+        else if (!state.email) setError('Your email is required!')
+    }
+
     return (
         <div>
             {
@@ -91,7 +123,7 @@ const App = () => {
             {
                 error &&
                 <div>
-                    <h3 className='fail'>{error}</h3>
+                    <h1 className='fail'>{error}</h1>
                     <br/>
                 </div>
             }
@@ -320,8 +352,8 @@ const App = () => {
                 </small>
                 <br/>
                 <div className='buttons'>
-                    <button disabled={isDisabled()} id='SubmitForm'>Submit</button>
-                    <button id='ResetForm'>Reset</button>
+                    <button type='Submit' disabled={isDisabled()} id='SubmitForm' onMouseOver={handleClick}>Submit</button>
+                    <button type='Reset' id='ResetForm'>Reset</button>
                 </div>
             </form>
         </div>
